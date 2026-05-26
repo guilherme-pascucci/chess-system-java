@@ -1,3 +1,11 @@
+package chess;
+
+import boardgame.Board;
+import boardgame.BoardException;
+import boardgame.Piece;
+import boardgame.Position;
+import chess.pieces.*;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -102,7 +110,7 @@ public class ChessMatch {
 
     private void validateSourcePosition(Position position){
         if (!board.thereIsAPiece(position)){
-            throw new BoardException("Position not on the board");
+            throw new BoardException("boardgame.Position not on the board");
         }
         if (currentPlayer != ((ChessPiece) board.piece(position)).getColor()){
             throw new ChessException("The chosen piece is not yours!");
